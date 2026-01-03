@@ -1,0 +1,9 @@
+{
+  "name": "nexus-banking-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Nexus Banking Intelligence Demo - UAE",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.24.0"
+  }
+}
