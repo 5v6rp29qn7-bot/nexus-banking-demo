@@ -760,7 +760,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(5, 30, 52, 0.85);
+            background: rgba(0, 0, 0, 0.75);
             z-index: 1000;
             display: flex;
             align-items: center;
@@ -768,7 +768,6 @@
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s;
-            backdrop-filter: blur(4px);
         }
         
         .tour-overlay.active {
@@ -777,13 +776,13 @@
         }
         
         .tour-card {
-            background: #0a2540;
-            border: 2px solid var(--border-gold);
+            background: #1a3a5c;
+            border: 2px solid #d4af37;
             border-radius: 16px;
             padding: 40px 50px;
             max-width: 600px;
             text-align: center;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.1);
         }
         
         .tour-subtitle {
@@ -838,9 +837,9 @@
         }
         
         .tour-btn-primary {
-            background: var(--accent-gold);
+            background: #d4af37;
             color: #051e34;
-            border: none;
+            border: 2px solid #d4af37;
             padding: 12px 28px;
             border-radius: 8px;
             font-weight: 700;
@@ -849,12 +848,12 @@
             transition: all 0.2s;
         }
         
-        .tour-btn-primary:hover { background: #e5c04a; }
+        .tour-btn-primary:hover { background: #e5c04a; border-color: #e5c04a; }
         
         .tour-btn-secondary {
-            background: transparent;
-            color: var(--text-muted);
-            border: 1px solid var(--border-subtle);
+            background: rgba(255,255,255,0.1);
+            color: #ffffff;
+            border: 2px solid rgba(255,255,255,0.3);
             padding: 12px 28px;
             border-radius: 8px;
             font-weight: 500;
@@ -863,7 +862,7 @@
             transition: all 0.2s;
         }
         
-        .tour-btn-secondary:hover { border-color: var(--text-secondary); color: var(--text-secondary); }
+        .tour-btn-secondary:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.15); }
         
         .tour-spotlight {
             position: fixed;
