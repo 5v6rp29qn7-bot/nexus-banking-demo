@@ -1299,19 +1299,15 @@ function renderTourStep(step) {
     document.getElementById('tourPrev').style.visibility = step === 0 ? 'hidden' : 'visible';
     document.getElementById('tourNext').textContent = step === tourSteps.length - 1 ? "Start Exploring →" : "Next →";
     
-    const spotlight = document.getElementById('tourSpotlight');
+    // Remove previous highlight
+    document.querySelectorAll('.tour-highlight').forEach(el => el.classList.remove('tour-highlight'));
+    
+    // Add highlight to target panel
     if (data.target) {
         const el = document.querySelector(data.target);
         if (el) {
-            const rect = el.getBoundingClientRect();
-            spotlight.style.display = 'block';
-            spotlight.style.top = rect.top - 4 + 'px';
-            spotlight.style.left = rect.left - 4 + 'px';
-            spotlight.style.width = rect.width + 8 + 'px';
-            spotlight.style.height = rect.height + 8 + 'px';
+            el.classList.add('tour-highlight');
         }
-    } else {
-        spotlight.style.display = 'none';
     }
 }
 
@@ -1333,7 +1329,7 @@ function prevTourStep() {
 
 function endTour() {
     document.getElementById('tourOverlay').classList.remove('active');
-    document.getElementById('tourSpotlight').style.display = 'none';
+    document.querySelectorAll('.tour-highlight').forEach(el => el.classList.remove('tour-highlight'));
     sessionStorage.setItem('nexusBankingTourShown', 'true');
 }
 
