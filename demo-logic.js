@@ -1299,20 +1299,9 @@ function renderTourStep(step) {
     document.getElementById('tourPrev').style.visibility = step === 0 ? 'hidden' : 'visible';
     document.getElementById('tourNext').textContent = step === tourSteps.length - 1 ? "Start Exploring →" : "Next →";
     
-    const spotlight = document.getElementById('tourSpotlight');
-    if (data.target) {
-        const el = document.querySelector(data.target);
-        if (el) {
-            const rect = el.getBoundingClientRect();
-            spotlight.style.display = 'block';
-            spotlight.style.top = rect.top - 4 + 'px';
-            spotlight.style.left = rect.left - 4 + 'px';
-            spotlight.style.width = rect.width + 8 + 'px';
-            spotlight.style.height = rect.height + 8 + 'px';
-        }
-    } else {
-        spotlight.style.display = 'none';
-    }
+    // Spotlight disabled - was causing visual issues
+    // const spotlight = document.getElementById('tourSpotlight');
+    // if (data.target) { ... }
 }
 
 function nextTourStep() {
